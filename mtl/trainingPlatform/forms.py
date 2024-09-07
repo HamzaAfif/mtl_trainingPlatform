@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Predefined lists of allowed email addresses
 ALLOWED_EMAILS_FOR_STAFF = ['staff@example.com', 'admin@example.com']
-ALLOWED_EMAILS_FOR_REGISTRATION = ['ha.afif@gmail.com', 'allowed2@example.com', 'allowed3@example.com']
+ALLOWED_EMAILS_FOR_REGISTRATION = ['ha.afif@gmail.com', 'allowed2@example.com', 'allowed3@example.com', 'staff@example.com']
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
