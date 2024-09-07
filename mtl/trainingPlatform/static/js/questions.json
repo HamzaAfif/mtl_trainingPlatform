@@ -1,0 +1,94 @@
+{
+    "blue_team": {
+      "SOC": {
+        "beginner": [
+          {"question": "What tools do you use for SOC analysis?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
+          {"question": "What is your experience with incident management?", "options": ["None", "Basic", "Intermediate", "Advanced"]}
+          
+        ],
+        "intermediate": [
+          {"question": "How do you handle threat intelligence?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
+          {"question": "What is your approach to log analysis?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+          
+        ],
+        "advanced": [
+          {"question": "What advanced SOC strategies do you use?", "options": ["Strategy A", "Strategy B", "Strategy C", "Strategy D"]},
+          {"question": "How do you manage complex incidents?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+          ] 
+        },
+      "Incident_Response": {
+        "beginner": [
+          {"question": "What is your primary tool for incident response?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
+          {"question": "How do you document incidents?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+          
+        ],
+        "intermediate": [
+          {"question": "How do you handle incident escalation?", "options": ["Method A", "Method B", "Method C", "Method D"]},
+          {"question": "What is your experience with forensics?", "options": ["None", "Basic", "Intermediate", "Advanced"]}
+         
+        ],
+        "advanced": [
+          {"question": "What advanced techniques do you use for incident response?", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
+          {"question": "How do you integrate incident response with threat intelligence?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+         
+        ]
+      },
+
+      "Digital_forensics": {
+        "beginner": [
+            {"question": "beginner question 1", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
+            {"question": "beginner question 2", "options": ["Method A", "Method B", "Method C", "Method D"]}
+            
+          ],
+          "intermediate": [
+            {"question": "intermediate question 1", "options": ["Method A", "Method B", "Method C", "Method D"]},
+            {"question": "intermediate question 2", "options": ["None", "Basic", "Intermediate", "Advanced"]}
+           
+          ],
+          "advanced": [
+            {"question": "advanced question 1", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
+            {"question": "advanced question 2", "options": ["Method A", "Method B", "Method C", "Method D"]}
+           
+          ]
+      }
+    },
+
+    "red_team": {
+      "Pen_Testing": {
+        "beginner": [
+          {"question": "What tools do you use for pen testing?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
+          {"question": "How do you handle vulnerabilities?", "options": ["Method A", "Method B", "Method C", "Method D"]},
+          {"question": "How do you handle vulnerabilities question 2 ?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+          
+        ],
+        "intermediate": [
+          {"question": "How do you conduct a penetration test?", "options": ["Method A", "Method B", "Method C", "Method D"]},
+          {"question": "What is your approach to reporting?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+          
+        ],
+        "advanced": [
+          {"question": "What advanced techniques do you use for pen testing?", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
+          {"question": "How do you handle complex vulnerabilities?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+         
+        ]
+      },
+      "Vulnerability_Assessment": {
+        "beginner": [
+          {"question": "What tools do you use for vulnerability assessment?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
+          {"question": "How do you prioritize vulnerabilities?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+          
+        ],
+        "intermediate": [
+          {"question": "How do you handle false positives?", "options": ["Method A", "Method B", "Method C", "Method D"]},
+          {"question": "What is your experience with vulnerability management?", "options": ["None", "Basic", "Intermediate", "Advanced"]}
+         
+        ],
+        "advanced": [
+          {"question": "What advanced techniques do you use for vulnerability assessment?", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
+          {"question": "How do you integrate vulnerability data with other security metrics?", "options": ["Method A", "Method B", "Method C", "Method D"]}
+         
+        ]
+      }
+    }
+}
+  

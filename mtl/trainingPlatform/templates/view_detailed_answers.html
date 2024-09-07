@@ -1,0 +1,11 @@
+<h2>{{ result.user.username }}'s Detailed Answers</h2>
+<p>Favorite Team: {{ result.favorite_team }}</p>
+<p>Favorite Topic: {{ result.favorite_topic }}</p>
+<p>Comfort Level: {{ result.comfort_level }}</p>
+
+<h3>Detailed Answers:</h3>
+<ul>
+    {% for answer in answers %}
+    <li>{{ answer.question }}: {{ answer.answer }}</li>
+    {% endfor %}
+</ul>

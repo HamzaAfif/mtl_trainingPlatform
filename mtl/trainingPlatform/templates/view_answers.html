@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+
+<h2>User Answers</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Favorite Team</th>
+            <th>Favorite Topic</th>
+            <th>Comfort Level</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_data %}
+        <tr>
+            <td>{{ user.username }}</td>
+            <td>{{ user.favorite_team }}</td>
+            <td>{{ user.favorite_topic }}</td>
+            <td>{{ user.comfort_level }}</td>
+            <td>{{ user.completed|yesno:"Completed,Not Filled" }}</td>
+            <td>
+                {% if user.completed %}
+                <a href="{% url 'view_detailed_answers' user.result_id %}">View More</a>
+                <form method="POST" action="{% url 'reset_answers' user.result_id %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-warning">Reset</button>
+                </form>
+                {% else %}
+                Not Available
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

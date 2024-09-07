@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block free %}
+  <div class="container mt-5" style="padding-top: 5%;">
+    
+    <div id="question-box" class="question-box text-center mx-auto shadow-lg p-5 rounded" style="background-color: white; width: 100%; max-width: 1200px;">
+
+      {% if user_questionnaire.completed %}
+        <div class="alert alert-warning" role="alert">
+          You have already completed the questionnaire. If you would like to retake it, please contact your team lead.
+        </div>
+      {% else %}
+
+
+      <div id="question1">
+        <h4 class="text-dark">What are you more into?</h4>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <button id="red-teaming-btn" class="btn btn-outline-primary btn-lg" onclick="selectOption('red')">Red Teaming</button>
+          <button id="blue-teaming-btn" class="btn btn-outline-primary btn-lg" onclick="selectOption('blue')">Blue Teaming</button>
+        </div>
+      </div>
+
+      <div id="question2" style="display: none;" class="mt-5">
+        <h4 id="next-question" class="text-dark"></h4>
+        <div id="options-container" class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+        </div>
+      </div>
+
+      <div id="question3" style="display: none;" class="mt-5">
+        <h4 class="text-dark">What is your level of comfortability?</h4>
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <button class="btn btn-outline-secondary btn-lg" onclick="selectComfortLevel('beginner')">Beginner</button>
+          <button class="btn btn-outline-secondary btn-lg" onclick="selectComfortLevel('intermediate')">Intermediate</button>
+          <button class="btn btn-outline-secondary btn-lg" onclick="selectComfortLevel('advanced')">Advanced</button>
+        </div>
+      </div>
+
+      <div id="questions-container" style="display: none;" class="mt-5"></div>
+      
+
+      <div class="text-center mt-5">
+        <button id="save-button" class="btn btn-primary btn-lg" style="display: none;" onclick="saveAnswers('{{ user.username }}')">Save Answers</button>
+      </div>
+      
+    </div>
+  </div>
+  {% endif %}
+{% endblock %}
+
+
+
+{% block scripts %}
+<script>
+  window.questionsUrl = "{% static 'js/questions.json' %}";
+</script>
+<script src="{% static 'js/home.js' %}" defer></script>
+{% endblock %}
+
+
