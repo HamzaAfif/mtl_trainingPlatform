@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block free %}
 
 {% if messages %}
 <div class="container mt-3">
@@ -12,41 +12,50 @@
 </div>
 {% endif %}
 
-
-<h2>User Answers</h2>
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Favorite Team</th>
-            <th>Favorite Topic</th>
-            <th>Comfort Level</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for user in user_data %}
-        <tr>
-            <td>{{ user.username }}</td>
-            <td>{{ user.favorite_team }}</td>
-            <td>{{ user.favorite_topic }}</td>
-            <td>{{ user.comfort_level }}</td>
-            <td>{{ user.completed|yesno:"Completed,Not Filled" }}</td>
-            <td>
-                {% if user.completed %}
-                <a href="{% url 'view_detailed_answers' user.result_id %}">View More</a>
-                <form method="POST" action="{% url 'reset_answers' user.result_id %}" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-warning">Reset</button>
-                </form>
-                {% else %}
-                Not Available
-                {% endif %}
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="table-container">
+        <h2 class="text-center mb-4">User Answers</h2>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Username</th>
+                    <th>Favorite Team</th>
+                    <th>Favorite Topic</th>
+                    <th>Comfort Level</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in user_data %}
+                <tr>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.favorite_team }}</td>
+                    <td>{{ user.favorite_topic }}</td>
+                    <td>{{ user.comfort_level }}</td>
+                    <td>
+                        {% if user.completed %}
+                        <span class="badge badge-success">Completed</span>
+                        {% else %}
+                        <span class="badge badge-secondary">Not Filled</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if user.completed %}
+                        <a href="{% url 'view_detailed_answers' user.result_id %}" class="btn btn-primary btn-sm">View More</a>
+                        <form method="POST" action="{% url 'reset_answers' user.result_id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-warning btn-sm">Reset</button>
+                        </form>
+                        {% else %}
+                        <span class="text-muted">Not Available</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 
 {% endblock %}

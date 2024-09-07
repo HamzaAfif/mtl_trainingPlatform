@@ -64,3 +64,63 @@ form input[type="email"] {
       padding: 10px; /* Adjust padding for better fit */
     }
   }
+
+
+
+  .table-container {
+    background-color: #f9f9f9; /* Light grey background for the container */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Ensure the container does not overflow */
+    margin: 0 auto; /* Center the container */
+    margin-top: 5%;
+}
+
+.table {
+    margin: 0; /* Remove default margin for the table */
+}
+
+.table th, .table td {
+    text-align: center; /* Center text in table cells */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* Light background on hover */
+}
+
+.table th {
+    background-color: #007bff; /* Blue background for header */
+    color: #fff; /* White text for header */
+}
+
+.table td {
+    vertical-align: middle; /* Center content vertically in cells */
+}
+
+h2 {
+    color: #343a40; /* Dark grey color for the title */
+}
+
+/* Badge colors */
+.badge-success {
+    background-color: #28a745; /* Green for completed */
+}
+
+.badge-secondary {
+    background-color: #6c757d; /* Grey for not filled */
+}
+
+/* Button colors */
+.btn-primary {
+    background-color: #007bff; /* Blue for primary buttons */
+    border-color: #007bff;
+}
+
+.btn-warning {
+    background-color: #ffc107; /* Yellow for warning buttons */
+    border-color: #ffc107;
+}
+
+
+

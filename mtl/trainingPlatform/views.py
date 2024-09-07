@@ -27,9 +27,8 @@ def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)  # Automatically log in the user after registration
-            return redirect('home')  # Redirect to the home page or any other page
+            form.save()
+            return redirect('login')
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
