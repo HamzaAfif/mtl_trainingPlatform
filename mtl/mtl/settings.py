@@ -46,7 +46,7 @@ INSTALLED_APPS = [
 
 LOGOUT_REDIRECT_URL = '/accounts/login/'  # Redirect after logout
 LOGIN_REDIRECT_URL = '/'  # Redirect after login
-LOGIN_URL = 'accounts//login/'  # URL for the login page
+LOGIN_URL = 'accounts/login/'  # URL for the login page
 
 
 PASSWORD_CHANGE_REDIRECT_URL = 'password_change_done'
