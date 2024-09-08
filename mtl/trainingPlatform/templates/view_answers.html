@@ -5,7 +5,7 @@
 {% if messages %}
 <div class="container mt-3">
     {% for message in messages %}
-        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert">
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% else %}alert-info{% endif %}" role="alert" style="margin-top: 2%;">
             {{ message }}
         </div>
     {% endfor %}
@@ -41,21 +41,31 @@
                         {% endif %}
                     </td>
                     <td>
-                        {% if user.completed %}
-                        <a href="{% url 'view_detailed_answers' user.result_id %}" class="btn btn-primary btn-sm">View More</a>
+                        {% if user.result_id %}
+                        
+
+                        <form method="POST" action="{% url 'view_detailed_answers' user.result_id %}" style="display: inline;">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary btn-sm">View More</button>
+                        </form>
+
                         <form method="POST" action="{% url 'reset_answers' user.result_id %}" style="display: inline;">
                             {% csrf_token %}
                             <button type="submit" class="btn btn-warning btn-sm">Reset</button>
                         </form>
-                        {% else %}
-                        <span class="text-muted">Not Available</span>
                         {% endif %}
+                        <form method="POST" action="{% url 'delete_user' user.id %}" style="display: inline;" onsubmit="return confirm('Are you sure you want to delete this account?');">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
+            
         </table>
     </div>
 </div>
+
 
 {% endblock %}

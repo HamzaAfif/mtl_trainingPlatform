@@ -29,14 +29,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
+                        
+                        <li class="nav-item ms-3">
+                            <a href="{% url 'password_change' %}" class="btn btn-primary btn-lg">Change Password</a>
+                        </li>
+                        {% if user.is_staff %}
+                        <li class="nav-item ms-3">
+                            <a href="{% url 'view_answers' %}" class="btn btn-primary btn-lg">View Answers</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item ms-3">
                             <form method="post" action="{% url 'logout' %}">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger btn-lg">Logout</button>
                             </form>
-                        </li>
-                        <li class="nav-item ms-3">
-                            <a href="{% url 'password_change' %}" class="btn btn-primary btn-lg">Change Password</a>
                         </li>
                     </ul>
                 </div>
@@ -45,7 +51,6 @@
         
 
     {% else %}
-    <!-- Non-authenticated User: Header with Logo and Title -->
     <header class="bg-dark text-white py-3 text-center">
         <img src="{% static 'assets/logo1.png' %}" alt="Microtech Leaders Logo" class="img-fluid" style="max-width: 150px;">
         <h1 class="mt-3">Microtech Leaders Training Platform</h1>

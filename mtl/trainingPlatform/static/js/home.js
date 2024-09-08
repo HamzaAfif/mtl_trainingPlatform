@@ -29,10 +29,10 @@ function updateQuestions() {
             let nextQuestionText = '';
             let optionsHtml = '';
 
-            // Reset previous selections and hide additional questions
+            
             selectedSubOption = '';
-            selectedAnswers = {}; // Reset selected answers
-            document.getElementById('questions-container').innerHTML = ''; // Clear existing questions
+            selectedAnswers = {}; 
+            document.getElementById('questions-container').innerHTML = ''; 
 
             if (selectedOption === 'red') {
               nextQuestionText = "You chose Red Teaming. What do you prefer in Red Teaming?";
@@ -45,7 +45,7 @@ function updateQuestions() {
               optionsHtml = `
                 <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('soc')">SOC Analyst</button>
                 <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('forensics')">Digital Forensics</button>
-                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('incident')">Incident Response</button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('threat')">Threat Hunting</button>
               `;
             }
 
@@ -105,8 +105,8 @@ async function loadQuestions() {
     if (selectedOption === 'blue') {
       if (selectedSubOption === 'soc') {
         questions = data.blue_team.SOC[selectedComfortLevel];
-      } else if (selectedSubOption === 'incident') {
-        questions = data.blue_team.Incident_Response[selectedComfortLevel];
+      } else if (selectedSubOption === 'threat') {
+        questions = data.blue_team.Threat_hunting[selectedComfortLevel];
       } else if (selectedSubOption === 'forensics') {
         questions = data.blue_team.Digital_forensics[selectedComfortLevel];
       }
