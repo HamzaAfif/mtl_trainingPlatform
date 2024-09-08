@@ -3,8 +3,27 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
 # Predefined lists of allowed email addresses
-ALLOWED_EMAILS_FOR_STAFF = ['staff@example.com', 'admin@example.com']
-ALLOWED_EMAILS_FOR_REGISTRATION = ['ha.afif@gmail.com', 'allowed2@example.com', 'allowed3@example.com', 'staff@example.com']
+ALLOWED_EMAILS_FOR_STAFF = [
+    'ha.afif25@gmail.com',
+    'helalamy@microtechleaders.com',
+    'zakariae.elmajdouli@gmail.com',
+    'elothemanymaha@gmail.com',
+    'nakkouchtarek@gmail.com',
+]
+
+ALLOWED_EMAILS_FOR_REGISTRATION = [
+    'ha.afif25@gmail.com',
+    'helalamy@microtechleaders.com',
+    'zakariae.elmajdouli@gmail.com',
+    'saadeddine.hachlaf@gmail.com',
+    'ibrahim.elamraoui1507@gmail.com',
+    'abdoukhalikihnouhaila4@gmail.com',
+    'adilelkhaider80@gmail.com',
+    'elothemanymaha@gmail.com',
+    'salmahaidar869@gmail.com',
+    'hajarjedouani@gmail.com',
+    'nakkouchtarek@gmail.com',
+]
 
 class CustomUserCreationForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -32,3 +51,4 @@ class CustomUserCreationForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
