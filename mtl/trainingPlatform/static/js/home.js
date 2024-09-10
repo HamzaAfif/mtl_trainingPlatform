@@ -49,13 +49,11 @@ function updateQuestions() {
               `;
             }
 
-            // Update the second question and options
             document.getElementById('next-question').innerHTML = nextQuestionText;
             document.getElementById('options-container').innerHTML = optionsHtml;
 
-            // Show the second question and hide others
             document.getElementById('question2').style.display = 'block';
-            document.getElementById('question3').style.display = 'none';
+            
 }
 
 function selectSubOption(option) {
@@ -71,24 +69,12 @@ function selectSubOption(option) {
   questionTexts['question2'] = 'You chose ' + (selectedOption === 'red' ? 'Red Teaming' : 'Blue Teaming') + '. What do you prefer in ' + (selectedOption === 'red' ? 'Red Teaming' : 'Blue Teaming') + '?';
   answerTexts['question2'] = option;
   
-  document.getElementById('question3').style.display = 'block';
-}
-
-function selectComfortLevel(level) {
-  const comfortButtons = document.querySelectorAll('#question3 .btn');
-  comfortButtons.forEach(button => button.classList.remove('btn-selected'));
-
-  const selectedButton = document.querySelector(`#question3 .btn[onclick="selectComfortLevel('${level}')"]`);
-  if (selectedButton) {
-    selectedButton.classList.add('btn-selected');
-    selectedComfortLevel = level;
-  }
-
-  questionTexts['question3'] = 'What is your level of comfortability?';
-  answerTexts['question3'] = level;
-
+  
+  console.log("got here "); 
   loadQuestions();
 }
+
+
 
 
 async function loadQuestions() {
@@ -99,22 +85,22 @@ async function loadQuestions() {
     }
     const data = await response.json();
 
-    console.log('Fetched data:', data); // Log fetched data
+    console.log('Fetched data:', data);
 
     let questions = [];
     if (selectedOption === 'blue') {
       if (selectedSubOption === 'soc') {
-        questions = data.blue_team.SOC[selectedComfortLevel];
+        questions = data.blue_team.SOC;
       } else if (selectedSubOption === 'threat') {
-        questions = data.blue_team.Threat_hunting[selectedComfortLevel];
+        questions = data.blue_team.Threat_hunting;
       } else if (selectedSubOption === 'forensics') {
-        questions = data.blue_team.Digital_forensics[selectedComfortLevel];
+        questions = data.blue_team.Digital_forensics;
       }
     } else if (selectedOption === 'red') {
       if (selectedSubOption === 'pen') {
-        questions = data.red_team.Pen_Testing[selectedComfortLevel];
+        questions = data.red_team.Pen_Testing;
       } else if (selectedSubOption === 'vuln') {
-        questions = data.red_team.Vulnerability_Assessment[selectedComfortLevel];
+        questions = data.red_team.Vulnerability_Assessment;
       }
     }
 
@@ -204,9 +190,9 @@ function saveAnswers(username) {
       console.error('Error:', error);
       alert('Error saving answers.');
     });
-  }
+}
   
-  function getCookie(name) {
+function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
       const cookies = document.cookie.split(';');
@@ -219,6 +205,6 @@ function saveAnswers(username) {
       }
     }
     return cookieValue;
-  }
+}
   
   

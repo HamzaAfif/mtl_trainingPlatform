@@ -1,94 +1,53 @@
 {
     "blue_team": {
-      "SOC": {
-        "beginner": [
-          {"question": "What tools do you use for SOC analysis?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
-          {"question": "What is your experience with incident management?", "options": ["None", "Basic", "Intermediate", "Advanced"]}
-          
-        ],
-        "intermediate": [
-          {"question": "How do you handle threat intelligence?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
-          {"question": "What is your approach to log analysis?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-          
-        ],
-        "advanced": [
-          {"question": "What advanced SOC strategies do you use?", "options": ["Strategy A", "Strategy B", "Strategy C", "Strategy D"]},
-          {"question": "How do you manage complex incidents?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-          ] 
-        },
-      "Threat_hunting": {
-        "beginner": [
-          {"question": "What is your primary tool for threat hunting?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
-          {"question": "How do you document incidents?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-          
-        ],
-        "intermediate": [
-          {"question": "How do you handle incident threat hunting?", "options": ["Method A", "Method B", "Method C", "Method D"]},
-          {"question": "What is your experience with forensics?", "options": ["None", "Basic", "Intermediate", "Advanced"]}
-         
-        ],
-        "advanced": [
-          {"question": "What advanced techniques do you use for incident threat hunting?", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
-          {"question": "How do you integrate incident response with threat hunting?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-         
-        ]
-      },
 
-      "Digital_forensics": {
-        "beginner": [
-            {"question": "beginner question 1", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
-            {"question": "beginner question 2", "options": ["Method A", "Method B", "Method C", "Method D"]}
-            
-          ],
-          "intermediate": [
-            {"question": "intermediate question 1", "options": ["Method A", "Method B", "Method C", "Method D"]},
-            {"question": "intermediate question 2", "options": ["None", "Basic", "Intermediate", "Advanced"]}
-           
-          ],
-          "advanced": [
-            {"question": "advanced question 1", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
-            {"question": "advanced question 2", "options": ["Method A", "Method B", "Method C", "Method D"]}
-           
-          ]
-      }
+      "SOC": [
+        {"question": "What's your level of experience with using a SIEM tool to correlate security events across different systems?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with analyzing firewall logs to identify potential intrusion attempts?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with working with EDR tools to detect and respond to endpoint threats?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with using XDR to integrate threat detection across multiple security layers like network and endpoints?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with using Sysmon and Syslog together to track detailed event logging on a system?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with monitoring network devices such as routers and switches to identify abnormal traffic?", "options": ["Beginner", "Intermediate", "Advanced"]}
+      ],
+      
+      "Threat_hunting": [
+        {"question": "What's your level of experience with using cyber threat intelligence tools to identify emerging threats?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with applying the MITRE ATT&CK framework to map out adversary tactics and techniques?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with identifying and handling false positives in security alerts?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with working with packet capture (PCAP) files to identify network-based attacks?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with detecting and mitigating advanced persistent threats (APTs) in an environment?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with performing malware analysis to determine its behavior and impact?", "options": ["Beginner", "Intermediate", "Advanced"]}
+        ],
+
+      "Digital_forensics": [
+        {"question": "What's your level of experience with conducting digital forensics investigations involving hard disk imaging?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with analyzing event logs to trace unauthorized access in a system?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with analyzing malware in a sandbox environment to observe its behavior?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with working with packet capture (PCAP) files to identify network-based attacks?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with using Windows command line tools to extract system information during an investigation?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with employing Linux command line tools to perform forensic analysis on a compromised system?", "options": ["Beginner", "Intermediate", "Advanced"]}
+      ]
       
     },
     "red_team": {
-      "Pen_Testing": {
-        "beginner": [
-          {"question": "What tools do you use for pen testing?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
-          {"question": "How do you handle vulnerabilities?", "options": ["Method A", "Method B", "Method C", "Method D"]},
-          {"question": "How do you handle vulnerabilities question 2 ?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-          
-        ],
-        "intermediate": [
-          {"question": "How do you conduct a penetration test?", "options": ["Method A", "Method B", "Method C", "Method D"]},
-          {"question": "What is your approach to reporting?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-          
-        ],
-        "advanced": [
-          {"question": "What advanced techniques do you use for pen testing?", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
-          {"question": "How do you handle complex vulnerabilities?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-         
-        ]
-      },
-      "Vulnerability_Assessment": {
-        "beginner": [
-          {"question": "What tools do you use for vulnerability assessment?", "options": ["Tool A", "Tool B", "Tool C", "Tool D"]},
-          {"question": "How do you prioritize vulnerabilities?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-          
-        ],
-        "intermediate": [
-          {"question": "How do you handle false positives?", "options": ["Method A", "Method B", "Method C", "Method D"]},
-          {"question": "What is your experience with vulnerability management?", "options": ["None", "Basic", "Intermediate", "Advanced"]}
-         
-        ],
-        "advanced": [
-          {"question": "What advanced techniques do you use for vulnerability assessment?", "options": ["Technique A", "Technique B", "Technique C", "Technique D"]},
-          {"question": "How do you integrate vulnerability data with other security metrics?", "options": ["Method A", "Method B", "Method C", "Method D"]}
-         
-        ]
-      }
+      "Pen_Testing": [
+        {"question": "What's your level of experience with performing penetration tests on Active Directory environments?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with conducting penetration tests on web applications to identify vulnerabilities?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with performing security assessments on mobile applications?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with testing APIs for security vulnerabilities such as improper authentication or data exposure?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with assessing the security of cloud environments like AWS, Azure, or GCP?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with performing network penetration tests to identify security weaknesses?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with developing or customizing exploits for vulnerabilities during pentesting engagements?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of writing penetrating testing report?", "options": ["Beginner", "Intermediate", "Advanced"]}
+      ],
+
+      "Vulnerability_Assessment": [
+        {"question": "What's your level of experience with using vulnerability assessment tools to identify and evaluate security weaknesses?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with applying vulnerability assessment frameworks to guide your evaluation process?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with calculating and interpreting CVSS (Common Vulnerability Scoring System) scores to prioritize vulnerabilities?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with managing and mitigating vulnerabilities found during assessments?", "options": ["Beginner", "Intermediate", "Advanced"]},
+        {"question": "What's your level of experience with creating playbooks for vulnerability management and incident response?", "options": ["Beginner", "Intermediate", "Advanced"]}
+        
+      ]
     }
 }
-  
