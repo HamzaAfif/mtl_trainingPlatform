@@ -13,14 +13,14 @@ function selectOption(choice) {
   
   if (choice === 'red') {
     document.getElementById('red-teaming-btn').classList.add('btn-selected');
-    selectedOption = 'red';
+    selectedOption = 'red_team';
   } else if (choice === 'blue') {
     document.getElementById('blue-teaming-btn').classList.add('btn-selected');
-    selectedOption = 'blue';
+    selectedOption = 'blue_team';
   }
   
   questionTexts['question1'] = 'What are you more into?';
-  answerTexts['question1'] = choice === 'red' ? 'Red Teaming' : 'Blue Teaming';
+  answerTexts['question1'] = choice === 'red_team' ? 'Red Teaming' : 'Blue Teaming';
   
   updateQuestions();
 }
@@ -34,18 +34,18 @@ function updateQuestions() {
             selectedAnswers = {}; 
             document.getElementById('questions-container').innerHTML = ''; 
 
-            if (selectedOption === 'red') {
+            if (selectedOption === 'red_team') {
               nextQuestionText = "You chose Red Teaming. What do you prefer in Red Teaming?";
               optionsHtml = `
-                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('pen')">Pen Testing</button>
-                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('vuln')">Vulnerability Assessment</button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('Pen_Testing')">Pen Testing</button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('Vulnerability_Assessment')">Vulnerability Assessment</button>
               `;
-            } else if (selectedOption === 'blue') {
+            } else if (selectedOption === 'blue_team') {
               nextQuestionText = "You chose Blue Teaming. What do you prefer in Blue Teaming?";
               optionsHtml = `
-                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('soc')">SOC Analyst</button>
-                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('forensics')">Digital Forensics</button>
-                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('threat')">Threat Hunting</button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('SOC')">SOC Analyst</button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('Digital_forensics')">Digital Forensics</button>
+                <button class="btn btn-outline-secondary btn-lg" onclick="selectSubOption('Threat_hunting')">Threat Hunting</button>
               `;
             }
 
@@ -66,7 +66,7 @@ function selectSubOption(option) {
     selectedSubOption = option;
   }
   
-  questionTexts['question2'] = 'You chose ' + (selectedOption === 'red' ? 'Red Teaming' : 'Blue Teaming') + '. What do you prefer in ' + (selectedOption === 'red' ? 'Red Teaming' : 'Blue Teaming') + '?';
+  questionTexts['question2'] = 'You chose ' + (selectedOption === 'red_team' ? 'Red Teaming' : 'Blue Teaming') + '. What do you prefer in ' + (selectedOption === 'red' ? 'Red Teaming' : 'Blue Teaming') + '?';
   answerTexts['question2'] = option;
   
   
@@ -88,18 +88,18 @@ async function loadQuestions() {
     console.log('Fetched data:', data);
 
     let questions = [];
-    if (selectedOption === 'blue') {
-      if (selectedSubOption === 'soc') {
+    if (selectedOption === 'blue_team') {
+      if (selectedSubOption === 'SOC') {
         questions = data.blue_team.SOC;
-      } else if (selectedSubOption === 'threat') {
+      } else if (selectedSubOption === 'Threat_hunting') {
         questions = data.blue_team.Threat_hunting;
-      } else if (selectedSubOption === 'forensics') {
+      } else if (selectedSubOption === 'Digital_forensics') {
         questions = data.blue_team.Digital_forensics;
       }
-    } else if (selectedOption === 'red') {
-      if (selectedSubOption === 'pen') {
+    } else if (selectedOption === 'red_team') {
+      if (selectedSubOption === 'Pen_Testing') {
         questions = data.red_team.Pen_Testing;
-      } else if (selectedSubOption === 'vuln') {
+      } else if (selectedSubOption === 'Vulnerability_Assessment') {
         questions = data.red_team.Vulnerability_Assessment;
       }
     }

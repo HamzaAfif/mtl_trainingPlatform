@@ -6,10 +6,21 @@
     
     <div id="question-box" class="question-box text-center mx-auto shadow-lg p-5 rounded" style="background-color: white; width: 100%; max-width: 1200px;">
 
-      {% if user_questionnaire.completed %}
-        <div class="alert alert-warning" role="alert">
-          You have already completed the questionnaire. If you would like to retake it, please contact your team lead.
+      {% if courses %}
+
+        <div class="card my-4">
+            <div class="card-header bg-info text-white">
+                <h4>Recommended Courses</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    {% for course in courses %}
+                        <li class="list-group-item">{{ course.course }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
+        
       {% else %}
 
 

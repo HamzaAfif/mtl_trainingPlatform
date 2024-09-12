@@ -1,11 +1,40 @@
-<h2>{{ result.user.username }}'s Detailed Answers</h2>
-<p>Favorite Team: {{ result.favorite_team }}</p>
-<p>Favorite Topic: {{ result.favorite_topic }}</p>
-<p>Comfort Level: {{ result.comfort_level }}</p>
+{% extends 'base.html' %}
+{% load static %}
 
-<h3>Detailed Answers:</h3>
-<ul>
-    {% for answer in answers %}
-    <li>{{ answer.question }}: {{ answer.answer }}</li>
-    {% endfor %}
-</ul>
+{% block free %}
+<div class="container my-5">
+
+    <div class="text-center mb-4">
+        <h2 class="display-5" style="color: white;">{{ result.user.username }}'s Detailed Answers</h2>
+    </div>
+
+
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">User Information</h4>
+        </div>
+        <div class="card-body" style="color: black;">
+            <p><strong>Favorite Team:</strong> {{ result.favorite_team|title }}</p>
+            <p><strong>Favorite Topic:</strong> {{ result.favorite_topic|title }}</p>
+            <p><strong>Comfort Level:</strong> <span class="badge bg-success">{{ result.comfort_level }}</span></p>
+        </div>
+    </div>
+
+   
+    <div class="card">
+        <div class="card-header bg-secondary text-white">
+            <h4 class="mb-0">Detailed Answers</h4>
+        </div>
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                {% for answer in answers %}
+                <li class="list-group-item">
+                    <strong>{{ answer.question }}</strong><br>
+                    <span class="text-muted">{{ answer.answer }}</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

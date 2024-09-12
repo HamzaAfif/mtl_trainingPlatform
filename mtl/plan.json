@@ -1,0 +1,65 @@
+{
+    "blue_team": {
+      "SOC": {
+        "beginner": [
+          {"course": "What is your experience with incident management?"}
+        ],
+        "intermediate": [
+          {"course": "What is your approach to log analysis?"}
+        ],
+        "advanced": [
+          {"course": "How do you manage complex incidents?"}
+          ] 
+        },
+    
+      "Incident_Response": {
+        "beginner": [
+          {"course": "How do you document incidents?"}
+        ],
+        "intermediate": [
+          {"course": "What is your experience with forensics?"}
+        ],
+        "advanced": [
+          {"course": "How do you integrate incident response with threat intelligence?"}
+        ]
+      },
+
+      "Digital_forensics": {
+        "beginner": [
+            {"course": "beginner course 2"}
+          ],
+          "intermediate": [
+            {"course": "intermediate course 2"}
+          ],
+          "advanced": [
+            {"course": "advanced course 2"}
+          ]
+      }
+    },
+
+    "red_team": {
+      "Pen_Testing": {
+        "beginner": [
+          {"course": "How do you handle vulnerabilities course 2 ?"}
+        ],
+        "intermediate": [
+          {"course": "What is your approach to reporting?"}
+        ],
+        "advanced": [
+          {"course": "How do you handle complex vulnerabilities?"}
+        ]
+      },
+
+      "Vulnerability_Assessment": {
+        "beginner": [
+          {"course": "What tools do you use for vulnerability assessment?"}
+        ],
+        "intermediate": [
+          {"course": "How do you handle false positives?"}
+        ],
+        "advanced": [
+          {"course": "What advanced techniques do you use for vulnerability assessment?"}
+        ]
+      }
+    }
+}

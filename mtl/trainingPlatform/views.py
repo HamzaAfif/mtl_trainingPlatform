@@ -10,14 +10,35 @@ from django.views.decorators.csrf import csrf_exempt
 import json
 from django.contrib.auth.models import User
 from .models import QuestionnaireResult, DetailedAnswer, User
+import os
+from django.conf import settings
 
 @login_required
 def home(request):
-    # Fetch the user's questionnaire result
     result = QuestionnaireResult.objects.filter(user=request.user).first()
+
     
-    # Pass the questionnaire result to the template
-    return render(request, 'home.html', {'user_questionnaire': result})
+    json_file_path = os.path.join(settings.BASE_DIR,  'plan.json')
+    with open(json_file_path, 'r') as file:
+        plan_data = json.load(file)
+
+   
+    user_team = result.favorite_team.lower()  
+    print(user_team)
+    user_topic = result.favorite_topic.replace(" ", "_") 
+    print(user_topic)
+    user_level = result.comfort_level.lower()  
+    print(user_level)
+
+
+    courses = plan_data.get(user_team, {}).get(user_topic, {}).get(user_level, [])
+
+    print(courses)
+
+    return render(request, 'home.html', {
+        'user_questionnaire': result,
+        'courses': courses
+    })
 
 def logout_view(request):
     logout(request)
@@ -70,36 +91,64 @@ def save_answers(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            print(f"Received data: {data}")  # Log the incoming data
+            print(f"Received data: {data}")  
 
             username = data.get('username')
             selected_team = data.get('selectedOption')
             selected_topic = data.get('selectedSubOption')
             comfort_level = data.get('selectedComfortLevel')
-            answers = data.get('answers', [])  # Retrieve answers
+            answers = data.get('answers', [])  
 
-            # Fetch user and their questionnaire result
+            
             user = User.objects.get(username=username)
             result, created = QuestionnaireResult.objects.get_or_create(user=user)
 
-            # Update the result with the answers and mark it as completed
+            
             result.favorite_team = selected_team
             result.favorite_topic = selected_topic
             result.comfort_level = comfort_level
             result.completed = True
             result.save()
 
-            # Save detailed answers
-            DetailedAnswer.objects.filter(result=result).delete()  # Clear old answers
+            
+            total_score = 0
+             
+
+            DetailedAnswer.objects.filter(result=result).delete()  
             for answer in answers:
+                answer_value = answer['answer']
+                
+                if answer_value == 'Beginner':
+                    total_score += 1
+
+                elif answer_value == 'Intermediate':
+                    total_score += 2
+
+                elif answer_value == 'Advanced':
+                    total_score += 3
+
+            
+                
                 DetailedAnswer.objects.create(
                     result=result,
                     question=answer['question'],
-                    answer=answer['answer']
+                    answer=answer_value
                 )
 
-            print(f"Successfully saved answers for {username}")  # Log success
-            return JsonResponse({'status': 'success'})
+            
+            if total_score <= (1.5 * len(answers)):  
+                user_level = 'Beginner'
+            elif total_score <= (2 * len(answers)):  
+                user_level = 'Intermediate'
+            else:  
+                user_level = 'Advanced'
+
+            
+            result.comfort_level = user_level
+            result.save()
+
+            print(f"Successfully saved answers for {username}, determined level: {user_level}")
+            return JsonResponse({'status': 'success', 'level': user_level})
         except Exception as e:
             print(f"Error: {e}")  # Log the error
             return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
