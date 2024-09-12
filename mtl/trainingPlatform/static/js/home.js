@@ -104,7 +104,7 @@ async function loadQuestions() {
       }
     }
 
-    console.log('Questions loaded:', questions); // Log questions
+    console.log('Questions loaded:', questions); 
 
     if (!questions || questions.length === 0) {
       throw new Error('No questions found for the selected options');

@@ -133,3 +133,7 @@ def delete_user(request, user_id):
         user.delete()
         messages.success(request, "User account deleted successfully.")
         return redirect('view_answers')  
+
+def passwordChange(request):
+    logout(request)
+    return redirect('login')
