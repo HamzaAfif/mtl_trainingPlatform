@@ -8,7 +8,7 @@
         "intermediate": [
           {"course": " "}
         ],
-        "advanced": [
+        "expert": [
           {"course": " "}
           ] 
         },
@@ -22,7 +22,7 @@
           {"course": " https://academy.tcm-sec.com/p/detection-engineering-for-beginners ",
           "description": "Detection Engineering for Beginners"}
         ],
-        "advanced": [
+        "expert": [
           {"course": " https://academy.tcm-sec.com/p/osint-fundamentals ",
           "description": "Open-Source Intelligence (OSINT) Fundamentals"}
         ]
@@ -36,7 +36,7 @@
           "intermediate": [
             {"course": " "}
           ],
-          "advanced": [
+          "expert": [
             {"course": " "}
           ]
       }
@@ -54,7 +54,7 @@
           {"course": "https://academy.tcm-sec.com/p/linux-privilege-escalation ",
           "description": "Linux Privilege Escalation for Beginners"}
         ],
-        "advanced": [
+        "expert": [
           {"course": " https://academy.tcm-sec.com/p/hacking-apis ",
           "description": "Practical API Hacking"},
           {"course": " https://academy.tcm-sec.com/p/practical-phishing-campaigns ",
@@ -73,7 +73,7 @@
           {"course": " https://academy.tcm-sec.com/p/external-pentest-playbook",
           "description": "The External Pentest Playbook"}
         ],
-        "advanced": [
+        "expert": [
           {"course": ""}
         ]
       }

@@ -124,7 +124,7 @@ def save_answers(request):
                 elif answer_value == 'Intermediate':
                     total_score += 2
 
-                elif answer_value == 'Advanced':
+                elif answer_value == 'Expert':
                     total_score += 3
 
             
@@ -141,7 +141,7 @@ def save_answers(request):
             elif total_score <= (2 * len(answers)):  
                 user_level = 'Intermediate'
             else:  
-                user_level = 'Advanced'
+                user_level = 'Expert'
 
             
             result.comfort_level = user_level

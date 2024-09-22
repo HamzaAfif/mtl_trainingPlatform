@@ -6,26 +6,30 @@
     
     <div id="question-box" class="question-box text-center mx-auto shadow-lg p-5 rounded" style="background-color: white; width: 100%; max-width: 1200px;">
 
-      {% if courses %}
-            <div class="card my-5 shadow-lg rounded border-0">
-              
+      {% if courses and courses|length > 0 %}
+          <!-- Show the card only if courses are available -->
+          <div class="card my-5 shadow-lg rounded border-0">
+              <!-- Card header -->
               <div class="card-header text-white text-center py-4" style="background: linear-gradient(135deg, #007bff, #00c6ff); border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem;">
                   <h4 class="mb-0" style="color: white;">🎓 Your Recommended Courses</h4>
               </div>
 
-              {% for course in courses %}
-              {% if course.course %}
+              <!-- Card body with course list -->
               <div class="card-body p-4" style="background-color: #ffffff;">
                   <p class="text-center lead" style="color: #555;">We have assigned the following courses to you. Click on "Visit Course" to start learning.</p>
                   <ul class="list-group list-group-flush mt-4">
-                      
+                      {% for course in courses %}
                           <li class="list-group-item d-flex justify-content-between align-items-center border-0" style="padding: 1rem; font-size: 1.1rem; color: #333;">
                               <div>
                                   <strong>{{ course.description }}</strong>
                               </div>
+                              {% if course.course %}
                                   <a href="{{ course.course }}" target="_blank" class="btn btn-primary btn-sm" style="padding: 0.5rem 1rem;">Visit Course</a>
+                              {% else %}
+                                  <span class="text-danger">Course unavailable for the chosen field/level. Please contact <strong>@zakaria</strong> for assistance or updates.</span>
+                              {% endif %}
                           </li>
-                      
+                      {% endfor %}
                   </ul>
               </div>
 
@@ -35,10 +39,6 @@
                   <a href="https://t.me/TcmEverything" class="btn btn-outline-dark" style="font-size: 1rem; padding: 0.75rem 1.25rem;" target="_blank">Open Telegram</a>
               </div>
           </div>
-          {% else %}
-              <span class="text-danger">Courses unavailable for the chosen field/level. Please contact <strong>@zakaria</strong> for assistance or updates.</span>
-          {% endif %}
-          {% endfor %}
       {% else %}
           
 
