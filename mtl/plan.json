@@ -2,7 +2,8 @@
     "blue_team": {
       "SOC": {
         "beginner": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/security-operations-soc-101?utm_source=linkedin&utm_medium=social_post&utm_campaign=soc101_2024 ",
+        "description": "Security Operations (SOC) 101"}
         ],
         "intermediate": [
           {"course": " "}
@@ -14,19 +15,23 @@
     
       "Incident_Response": {
         "beginner": [
-          {"course": " "}
+          {"course": "https://academy.tcm-sec.com/p/practical-malware-analysis-triage",
+          "description": "Practical Malware Analysis & Triage"}
         ],
         "intermediate": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/detection-engineering-for-beginners ",
+          "description": "Detection Engineering for Beginners"}
         ],
         "advanced": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/osint-fundamentals ",
+          "description": "Open-Source Intelligence (OSINT) Fundamentals"}
         ]
       },
 
       "Digital_forensics": {
         "beginner": [
-            {"course": " "}
+            {"course": "https://academy.tcm-sec.com/p/practical-windows-forensics ",
+            "description": "Practical Windows Forensics"}
           ],
           "intermediate": [
             {"course": " "}
@@ -40,25 +45,36 @@
     "red_team": {
       "Pen_Testing": {
         "beginner": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/practical-ethical-hacking-the-complete-course ",
+          "description": "Practical Ethical Hacking"}
         ],
         "intermediate": [
-          {"course": " "}
+          {"course": "https://academy.tcm-sec.com/p/windows-privilege-escalation-for-beginners ",
+          "description": "Windows Privilege Escalation for Beginners"},
+          {"course": "https://academy.tcm-sec.com/p/linux-privilege-escalation ",
+          "description": "Linux Privilege Escalation for Beginners"}
         ],
         "advanced": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/hacking-apis ",
+          "description": "Practical API Hacking"},
+          {"course": " https://academy.tcm-sec.com/p/practical-phishing-campaigns ",
+          "description": "Practical Phishing Campaigns"},
+          {"course": " https://academy.tcm-sec.com/p/practical-web-hacking ",
+          "description": "Practical Web Hacking"}
         ]
       },
 
       "Vulnerability_Assessment": {
         "beginner": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/grc ",
+          "description": "GRC Analyst Master Class"}
         ],
         "intermediate": [
-          {"course": " "}
+          {"course": " https://academy.tcm-sec.com/p/external-pentest-playbook",
+          "description": "The External Pentest Playbook"}
         ],
         "advanced": [
-          {"course": " "}
+          {"course": ""}
         ]
       }
     }

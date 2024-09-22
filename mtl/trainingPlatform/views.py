@@ -15,30 +15,30 @@ from django.conf import settings
 
 @login_required
 def home(request):
+
     result = QuestionnaireResult.objects.filter(user=request.user).first()
 
     
-    json_file_path = os.path.join(settings.BASE_DIR,  'plan.json')
+    json_file_path = os.path.join(settings.BASE_DIR, 'plan.json')
+
+    
     with open(json_file_path, 'r') as file:
         plan_data = json.load(file)
 
    
     user_team = result.favorite_team.lower()  
-    print(user_team)
-    user_topic = result.favorite_topic.replace(" ", "_") 
-    print(user_topic)
+    user_topic = result.favorite_topic.replace(" ", "_")  
     user_level = result.comfort_level.lower()  
-    print(user_level)
 
-
+    
     courses = plan_data.get(user_team, {}).get(user_topic, {}).get(user_level, [])
 
-    print(courses)
-
+    
     return render(request, 'home.html', {
         'user_questionnaire': result,
         'courses': courses
     })
+
 
 def logout_view(request):
     logout(request)

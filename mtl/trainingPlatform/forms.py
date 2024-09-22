@@ -4,25 +4,27 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 ALLOWED_EMAILS_FOR_STAFF = [
-    'ha.afif25@gmail.com',
+    'hafif@microtechleaders.com',
     'helalamy@microtechleaders.com',
-    'zakariae.elmajdouli@gmail.com',
-    'elothemanymaha@gmail.com',
-    'nakkouchtarek@gmail.com',
+    'zelmajdouli@microtechleaders.com',
+    'melothemany@microtechleaders.com',
+    'tnakkouch@microtechleaders.com',
+    'shachlaf@microtechleaders.com',
+    'ielamraoui@microtechleaders.com',
 ]
 
 ALLOWED_EMAILS_FOR_REGISTRATION = [
-    'ha.afif25@gmail.com',
+    'hafif@microtechleaders.com',
     'helalamy@microtechleaders.com',
-    'zakariae.elmajdouli@gmail.com',
-    'saadeddine.hachlaf@gmail.com',
-    'ibrahim.elamraoui1507@gmail.com',
+    'zelmajdouli@microtechleaders.com',
+    'shachlaf@microtechleaders.com',
+    'ielamraoui@microtechleaders.com',
     'abdoukhalikihnouhaila4@gmail.com',
     'adilelkhaider80@gmail.com',
-    'elothemanymaha@gmail.com',
+    'melothemany@microtechleaders.com',
     'salmahaidar869@gmail.com',
     'hajarjedouani@gmail.com',
-    'nakkouchtarek@gmail.com',
+    'tnakkouch@microtechleaders.com',
 ]
 
 class CustomUserCreationForm(UserCreationForm):
