@@ -67,6 +67,8 @@ def view_answers(request):
             user_data.append({
                 'id': user.id,  # Include the user ID here
                 'username': user.username,
+                'last_name' : user.last_name,
+                'first_name' : user.first_name,
                 'favorite_team': result.favorite_team,
                 'favorite_topic': result.favorite_topic,
                 'comfort_level': result.comfort_level,
@@ -77,6 +79,7 @@ def view_answers(request):
             user_data.append({
                 'id': user.id,  # Include the user ID here as well
                 'username': user.username,
+                'first_name' : user.first_name,
                 'favorite_team': 'N/A',
                 'favorite_topic': 'N/A',
                 'comfort_level': 'N/A',
